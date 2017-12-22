@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
     private ViewPagerAdapters mViewPagerAdapter;
-    private int page=0;
+    private int page = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mViewPager = findViewById(R.id.photos_viewpager);
-        mViewPagerAdapter =new ViewPagerAdapters((getSupportFragmentManager()));
-        mViewPagerAdapter.addFragments(new FirstFragment(),null);
-        mViewPagerAdapter.addFragments(new SecondFragment(),null);
-        mViewPagerAdapter.addFragments(new ThirdFragment(),null);
+        mViewPagerAdapter = new ViewPagerAdapters((getSupportFragmentManager()));
+        mViewPagerAdapter.addFragments(new FirstFragment(), null);
+        mViewPagerAdapter.addFragments(new SecondFragment(), null);
+        mViewPagerAdapter.addFragments(new ThirdFragment(), null);
         mViewPager.setAdapter(mViewPagerAdapter);
         mViewPager.setCurrentItem(page);
         pageSwitcher(2);
@@ -49,12 +49,14 @@ public class MainActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
 
-                    if (page ==2) { // In my case the number of pages are 5
-                        page=0;
-                        mViewPager.setCurrentItem(page);
-                    } else {
+                    if (page == 2){     // In my case the number of pages are 3
+                        page = 0;
+                        mViewPager.setRotationY(180);
+                        mViewPager.setCurrentItem(page,true);
+                    } else{
                         page++;
-                        mViewPager.setCurrentItem(page);
+                        mViewPager.setRotationY(0);
+                        mViewPager.setCurrentItem(page,true);
                     }
                 }
             });
