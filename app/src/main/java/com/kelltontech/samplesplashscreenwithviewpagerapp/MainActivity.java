@@ -4,8 +4,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import java.util.Timer;
+
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,12 +20,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mViewPager = findViewById(R.id.photos_viewpager);
-        mViewPagerAdapter = new ViewPagerAdapters((getSupportFragmentManager()));
-        mViewPagerAdapter.addFragments(new FirstFragment(), null);
-        mViewPagerAdapter.addFragments(new SecondFragment(), null);
-        mViewPagerAdapter.addFragments(new ThirdFragment(), null);
+        mViewPagerAdapter = new ViewPagerAdapters(this);
         mViewPager.setAdapter(mViewPagerAdapter);
-        mViewPager.setCurrentItem(page);
         pageSwitcher(2);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(mViewPager, true);
@@ -49,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
 
-                    if (page == 2){     // In my case the number of pages are 3
+                    if (page == 3){     // In my case the number of pages are 3
                         page = 0;
                         mViewPager.setRotationY(180);
                         mViewPager.setCurrentItem(page,true);
