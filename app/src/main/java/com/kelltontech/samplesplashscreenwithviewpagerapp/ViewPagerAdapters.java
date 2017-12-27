@@ -30,7 +30,7 @@ public class ViewPagerAdapters extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         View itemView = mLayoutInflater.inflate(R.layout.pager_item, container, false);
 
-        ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
+        ImageView imageView = itemView.findViewById(R.id.imageView);
         imageView.setImageResource(mResources[position]);
 
         container.addView(itemView);
@@ -45,7 +45,7 @@ public class ViewPagerAdapters extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == ((LinearLayout) object);    }
+        return view == object;    }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
