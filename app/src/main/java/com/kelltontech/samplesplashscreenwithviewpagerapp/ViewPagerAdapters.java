@@ -18,9 +18,8 @@ import java.util.ArrayList;
  */
 
 public class ViewPagerAdapters extends PagerAdapter {
-    Context mContext;
-    LayoutInflater mLayoutInflater;
-    int[] mResources = {
+    private LayoutInflater mLayoutInflater;
+    private int[] mResources = {
             R.drawable.first,
             R.drawable.second,
             R.drawable.third,
@@ -28,8 +27,7 @@ public class ViewPagerAdapters extends PagerAdapter {
     };
 
     public ViewPagerAdapters(Context context) {
-        mContext = context;
-        mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
