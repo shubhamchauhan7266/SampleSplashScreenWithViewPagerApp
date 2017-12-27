@@ -11,7 +11,6 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
-    private ViewPagerAdapters mViewPagerAdapter;
     private int page = 0;
 
     @Override
@@ -20,18 +19,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mViewPager = findViewById(R.id.photos_viewpager);
-        mViewPagerAdapter = new ViewPagerAdapters(this);
-        mViewPager.setAdapter(mViewPagerAdapter);
-        pageSwitcher(2);
+        ViewPagerAdapters viewPagerAdapters = new ViewPagerAdapters(this);
+        mViewPager.setAdapter(viewPagerAdapters);
+        pageSwitcher();
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(mViewPager, true);
     }
 
-    public void pageSwitcher(int seconds) {
+    public void pageSwitcher() {
         Timer timer = new Timer(); // At this line a new Thread will be created
-        timer.scheduleAtFixedRate(new RemindTask(), 0, seconds * 1000); // delay
-        // in
-        // milliseconds
+        timer.scheduleAtFixedRate(new RemindTask(), 0, 2 * 1000); // delay for 2 second
     }
 
     // this is an inner class...
