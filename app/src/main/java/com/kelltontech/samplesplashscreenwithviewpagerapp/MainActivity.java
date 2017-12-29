@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
 
-                    if (page == 3){     // In my case the number of pages are 3
+                    if (page == 3){     // In my case the number of pages are 4
                         page = 0;
-//                        setupPager();
+                        setupPager();
                        // mViewPager.setRotationY(180);
                         mViewPager.setCurrentItem(page,true);
                     } else{
