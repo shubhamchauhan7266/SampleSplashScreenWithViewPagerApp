@@ -19,11 +19,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mViewPager = findViewById(R.id.photos_viewpager);
-        ViewPagerAdapters viewPagerAdapters = new ViewPagerAdapters(this);
-        mViewPager.setAdapter(viewPagerAdapters);
+        setupPager();
         pageSwitcher();
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(mViewPager, true);
+    }
+
+    private void setupPager(){
+        ViewPagerAdapters viewPagerAdapters = new ViewPagerAdapters(this);
+        mViewPager.setAdapter(viewPagerAdapters);
     }
 
     public void pageSwitcher() {
@@ -44,11 +48,12 @@ public class MainActivity extends AppCompatActivity {
 
                     if (page == 3){     // In my case the number of pages are 3
                         page = 0;
-                        mViewPager.setRotationY(180);
+//                        setupPager();
+                       // mViewPager.setRotationY(180);
                         mViewPager.setCurrentItem(page,true);
                     } else{
                         page++;
-                        mViewPager.setRotationY(0);
+                       // mViewPager.setRotationY(0);
                         mViewPager.setCurrentItem(page,true);
                     }
                 }

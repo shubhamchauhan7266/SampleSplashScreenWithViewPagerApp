@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SampleSplashScreenWithViewPagerApp.iml" filepath="$PROJECT_DIR$/.idea/SampleSplashScreenWithViewPagerApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/SampleSplashScreenWithViewPagerApp.iml" filepath="$PROJECT_DIR$/SampleSplashScreenWithViewPagerApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SampleSplashScreenWithViewPagerApp.iml" filepath="$PROJECT_DIR$/.idea/SampleSplashScreenWithViewPagerApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
